@@ -1,0 +1,15 @@
+<ion-list>
+  <ion-item button *ngFor="let dev of developers" [routerLink]="['/', 'developers', dev.id]">
+    <!-- <ion-avatar slot="start">
+      <img [src]="dev.img">
+    </ion-avatar> -->
+    <ion-label class="face-snap-card">
+      <h1>{{ dev.name }}</h1>
+      <img [src]="dev.img">
+      <p>Set 1:{{ dev.set1 }}</p>
+      <p>Set 2:{{ dev.set2 }}</p>
+      <p>Set 3:{{ dev.set3 }}</p>
+      <p>Set 4:{{ dev.set4 }}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>

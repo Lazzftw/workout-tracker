@@ -1,0 +1,30 @@
+
+<!-- <ion-img src="http://localhost/_app_content_/com.google.android.apps.photos.contentprovider/-1/1/content%3A%2F%2Fmedia%2Fexternal%2Fimages%2Fmedia%2F31/ORIGINAL/NONE/image%2Fjpeg/1881973655"></ion-img> -->
+<!-- <ion-img [src]="imgurl"></ion-img> -->
+<!-- <img [src]="clickedImage" /> -->
+<ion-list>
+  <ion-item-sliding *ngFor="let exercice of myExercice" >
+  <ion-item >
+    <ion-avatar slot="start">
+      <img [src]="exercice.img">
+    </ion-avatar>
+    <ion-label [routerLink]="['/', 'exercice-list', exercice.id]">
+      <h1>{{ exercice.name }}</h1>
+    </ion-label>
+  </ion-item>
+  <ion-item-options side="end"> 
+    <ion-item-option (click)="editActionSheet(exercice)">
+        <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+      </ion-item-option>
+  <ion-item-option color="danger" (click)="deleteExerciceAlert(exercice.id)">
+    <ion-icon slot="icon-only" name="trash"></ion-icon>
+  </ion-item-option>
+</ion-item-options>
+</ion-item-sliding>
+</ion-list>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button (click)="addExerciceAlert()">
+      <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab> 
+

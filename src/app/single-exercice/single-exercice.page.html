@@ -1,0 +1,36 @@
+<!-- <ion-label class="face-snap-card">
+  <h1></h1>
+  <img [src]="exercice.img">
+  <p>Set 1:{{ exercice.set1 }}</p>
+  <p>Set 2:{{ exercice.set2 }}</p>
+  <p>Set 3:{{ exercice.set3 }}</p>
+  <p>Set 4:{{ exercice.set4 }}</p>
+</ion-label> -->
+<form (submit)="updateExercice()" >
+<div class="div">
+<ion-card >
+  <ion-card-header>
+    <ion-card-title><h1>{{ exercice.name }}</h1></ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <img [src]="exercice.img">
+    <ion-item >
+      <ion-label><h1>Set 1:</h1></ion-label>
+      <ion-input clearInput clearOnEdit [(ngModel)]="exercice.set1" name="set1" type="number" (ionBlur)="updateExercice()" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><h1>Set 2</h1></ion-label>
+      <ion-input clearInput clearOnEdit [(ngModel)]="exercice.set2" name="set2" type="number" (ionBlur)="updateExercice()" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><h1>Set 3</h1></ion-label>
+      <ion-input clearInput clearOnEdit [(ngModel)]="exercice.set3" name="set3" type="number" (ionBlur)="updateExercice()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label><h1>Set 4</h1></ion-label>
+      <ion-input clearInput clearOnEdit [(ngModel)]="exercice.set4" name="set4" type="number" (ionBlur)="updateExercice()"></ion-input>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+</div>
+</form>
